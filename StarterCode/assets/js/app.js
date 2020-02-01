@@ -54,23 +54,23 @@ d3.csv("assets/data/data.csv").then(function(healthData) {
         .attr("fill", "blue")
         .attr("opacity", "1");
 
-    // chartGroup.selectAll("text")
-    //     .data(healthData)
-    //     .enter()
-    //     .append("text")
-    //     .text(function(d) {
-    //       return d.abbr;
-    //     })
-    //     .attr("x", function(d) {
-    //       console.log(d.income);
-    //       return xLinearScale(d.income)-10;
-    //     })
-    //     .attr("y", function(d) {
-    //       console.log(d.obesity);
-    //       return yLinearScale(d.obesity)+6;
-    //     })
-    //     .attr("font-size", "15px")
-    //     .attr("fill", "#A6EB24");
+    chartGroup.selectAll("text")
+        .data(healthData)
+        .enter()
+        .append("text")
+        .text(function(d) {
+          return d.abbr;
+        })
+        .attr("x", function(d) {
+          console.log(d.income);
+          return xLinearScale(d.income)-10;
+        })
+        .attr("y", function(d) {
+          console.log(d.obesity);
+          return yLinearScale(d.obesity)+6;
+        })
+        .attr("font-size", "15px")
+        .attr("fill", "#A6EB24");
   
     var toolTip = d3.tip()
       .attr("class", "tooltip")
